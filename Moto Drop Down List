@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript">
+
+  function populate(fc,sc){
+    var fc = document.getElementById(fc);
+    var sc = document.getElementById(sc);
+    sc.innerHTML = "";
+
+    if(fc.value == "Kawasaki"){
+      var optionArray = ["|", ","ninja|Ninja","cbr|Cbr","gsxr|Gsxr","enduro|Enduro"];
+      else if(fc.value == "Honda"){
+        var optionArray = ["|", ","vfr|VFR","cbr|Cbr","grom|Grom","|Enduro"];
+      else if(fc.value == "Suzuki"){
+        var optionArray = ["|", ","ninja|Ninja","cbr|Cbr","gsxr|Gsxr","enduro|Enduro"];
+    }
+        for(var option in optionArray){
+            var pair = optionArray[option].split("|");
+            var newOption = document.createElement("option");
+            newOption.value = pair[0];
+            newOption.innerHTML = pair[1];
+            sc.options.add(newOption);
+
+
+      }
+
+  }
+
+
+
+  </script>
+
+  <body>
+  <h2>Choose your Motorcycle</h2>
+  <hr />
+  Choose Motorcycle Make
+
+  <select id="firstchoice" name="firstchoice" onchange="populate('firstchoice', 'secondchoice')">
+    <option value=""></option>
+    <option value="Kawasaki">Kawasaki</option>
+    <option value="Honda">Honda</option>
+    <option value="Suzuki">Suzuki</option>
+    <option value="Yamaha">Yamaha</option>
+  </select>
+  <hr />
+
+  Choose Moto Model:
+  <select id="secondchoice" name="secondchoice">
+    <hr />
+  </body>
+
+
+  </html>
